@@ -73,8 +73,21 @@ function draw() {
  
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
-
   
+  if(keyCode===LEFT_ARROW){
+	helicopterSprite.x=helicopterSprite.x-20; 
+	Matter.Body.translate(packageBody,{x:-20,y:0});
+  }
+
+  if(keyCode===RIGHT_ARROW){
+	helicopterSprite.x=helicopterSprite.x+20; 
+	Matter.Body.translate(packageBody,{x:+20,y:0});
+  }
+if(keyCode===DOWN_ARROW){
+	Matter.Body.setStatic(packageBody,false);
+}
+
+
   drawSprites();
   
   
